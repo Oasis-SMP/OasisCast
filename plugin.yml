@@ -1,0 +1,12 @@
+name: OasisCast
+main: net.charter.orion_pax.OasisCast.OasisCast
+version: 1.0
+description: Extension of OasisExtras Broad Cast commands!
+author: Paxination
+commands:
+
+  cast:
+    description: The Cast command!
+    usage: "Usage: /<command>"
+    permission: oasiscast.staff.cast
+    permission-message: You don't have permissions for <permission>
