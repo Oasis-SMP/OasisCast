@@ -45,8 +45,18 @@ public class OasisCastCommands implements CommandExecutor{
 						}
 					}
 					sender.sendMessage(ChatColor.RED + args[1] + " not found!");
-					return false;
+					sender.sendMessage(ChatColor.RED + "/cast delete COMMAND");
+					return true;
 				}
+			}
+			
+			if(args[0].equalsIgnoreCase("help")){
+				sender.sendMessage(ChatColor.GREEN + "usage: /cast list");
+				sender.sendMessage(ChatColor.GREEN + "usage: /cast add COMMAND PREFIX TEXTCOLOR");
+				sender.sendMessage(ChatColor.GREEN + "usage: /cast delete COMMAND");
+				sender.sendMessage(ChatColor.GREEN + "usage: /cast reload");
+				sender.sendMessage(ChatColor.GREEN + "usage: /cast help (DUH!  HOW DO YOU THINK YOU GOT HERE?");
+				return true;
 			}
 			
 			if(args[0].equalsIgnoreCase("add")){
@@ -61,7 +71,7 @@ public class OasisCastCommands implements CommandExecutor{
 					} else {
 						sender.sendMessage(ChatColor.RED
 								+ "/cast add cmd_name displayname textcolor");
-						return false;
+						return true;
 					}
 				}
 			}
