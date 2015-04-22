@@ -62,11 +62,16 @@ public class OasisCastCommands implements CommandExecutor{
 			if(args[0].equalsIgnoreCase("add")){
 				if (sender.hasPermission("oasiscast.staff.add")) {
 					if (args.length == 4) {
+						if(args[1].equalsIgnoreCase("cast")){
+							sender.sendMessage(ChatColor.RED + "Damnit Cody, stop trying to brea mah shit maaaaan!");
+							return true;
+						}
 						plugin.getConfig().set(args[1] + ".Name", args[2]);
 						plugin.getConfig().set(args[1] + ".Text", args[3]);
 						plugin.saveConfig();
 						sender.sendMessage(ChatColor.GREEN
 								+ "Successfully added!");
+						sender.sendMessage(ChatColor.GREEN + "Permnode: oasiscast.staff." + args[1]);
 						return true;
 					} else {
 						sender.sendMessage(ChatColor.RED
@@ -76,7 +81,8 @@ public class OasisCastCommands implements CommandExecutor{
 				}
 			}
 		}
-		return false;
+		sender.sendMessage(ChatColor.GREEN + "usage: /cast help");
+		return true;
 	}
 
 }
